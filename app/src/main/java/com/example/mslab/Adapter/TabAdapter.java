@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TabAdapter extends FragmentPagerAdapter {
+
         private List<Fragment> fragments = new ArrayList<>();
         private List<String> fragmentTitle = new ArrayList<>();
-
-//    int counttab;
 
         public TabAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);
         }
+
         public void addFragment(Fragment fragment, String title){
             fragments.add(fragment);
             fragmentTitle.add(title);
@@ -28,17 +28,6 @@ public class TabAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
-//        switch (i){
-//            case 0 :
-//                TabOne tabOne = new TabOne();
-//                return tabOne;
-//            case 1 :
-//                TabTwo tabTwo = new TabTwo();
-//                return tabTwo;
-//            default:
-//                return null;
-//        }
-
     }
 
     @Override

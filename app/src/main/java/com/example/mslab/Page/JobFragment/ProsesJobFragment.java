@@ -1,12 +1,20 @@
-package com.example.mslab;
+package com.example.mslab.Page.JobFragment;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.mslab.Adapter.prosesJobAdapter;
+import com.example.mslab.Model.prosesJob;
+import com.example.mslab.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +22,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ProsesJobFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter rAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    ArrayList<prosesJob> data = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +71,20 @@ public class ProsesJobFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_proses_job,container,false);
+        recyclerView = view.findViewById(R.id.recylceView);
+
+        layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        rAdapter = new prosesJobAdapter(data,getContext());
+        recyclerView.setAdapter(rAdapter);
+
+        data.add(new prosesJob("Pelabelan","Kepada setiap koordinator lab agar segera merampungkan " +
+                "pendataan barang lab","Proses"));
+        data.add(new prosesJob("Adm","Pengisian berita acara agar dipercepat","Selesai"));
+        rAdapter.notifyDataSetChanged();
+        return view;
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_proses_job, container, false);
     }
 }

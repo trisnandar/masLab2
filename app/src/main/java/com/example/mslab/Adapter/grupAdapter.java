@@ -35,7 +35,7 @@ public class grupAdapter extends RecyclerView.Adapter<grupAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull grupAdapter.MyViewHolder holder, int position) {
         holder.img.setImageResource(data.get(position).getFoto());
         holder.tv1.setText(data.get(position).getNamaAs());
-        holder.tv1.setText(data.get(position).getIdAs());
+        holder.tv2.setText(data.get(position).getIdAs());
     }
 
     @Override

@@ -35,9 +35,13 @@ public class groupPage extends Fragment {
         rAdapter = new grupAdapter(data,getContext());
         recyclerView.setAdapter(rAdapter);
 
-        data.add(new Grup(R.mipmap.iclabbbiru,"dd","dd"));
-        data.add(new Grup(R.mipmap.iclabbbiru,"dd","dd"));
-        data.add(new Grup(R.drawable.ic_home,"dd","dd"));
+        data.add(new Grup(R.mipmap.man,"Yudha Islami Sulistya","Iclabs.2017.0007"));
+        data.add(new Grup(R.mipmap.woman,"Kasmira","Iclabs.2017.0010"));
+        data.add(new Grup(R.mipmap.man,"Ikraam Ar Razaaq","Iclabs.2017.0013"));
+        data.add(new Grup(R.mipmap.woman,"Erika Apriliyani","Iclabs.2017.0015"));
+        data.add(new Grup(R.mipmap.woman,"Nurul A'ayunisa","Iclabs.2017.0008"));
+        data.add(new Grup(R.mipmap.man,"Taufik Baharsyah","Iclabs.2017.0002"));
+        data.add(new Grup(R.mipmap.man,"La Saiman","Iclabs.2017.0005"));
         rAdapter.notifyDataSetChanged();
         return view;
 

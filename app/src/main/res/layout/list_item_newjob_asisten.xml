@@ -9,32 +9,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/foto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/man"/>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
         <TextView
-            android:id="@+id/namaAsisten"
+            android:id="@+id/namaTugas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama"
+            android:text="Tugas"
             android:textColor="@color/black"/>
         <TextView
-            android:id="@+id/idAsisten"
+            android:id="@+id/descTugas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID"
+            android:text="Deskripsi Tugas"
+            android:textSize="10sp"
             android:textColor="@color/black"/>
+
         </LinearLayout>
+        <TextView
+            android:id="@+id/deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="1dp"
+            android:layout_margin="2dp"
+            android:text="Deadline"
+            android:textSize="9sp"
+            android:textColor="@color/black"/>
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

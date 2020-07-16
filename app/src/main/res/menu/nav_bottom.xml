@@ -12,8 +12,8 @@
         android:icon="@drawable/ic_group"/>
     <item
         android:id="@+id/nav_work"
-        android:title="Pekerjaan"
-        android:icon="@drawable/ic_work"/>
+        android:title="Tugas"
+        android:icon="@drawable/ic_assignment"/>
     <item
         android:id="@+id/nav_profil"
         android:title="Profil"

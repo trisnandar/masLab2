@@ -1,81 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:background="@color/white">
 
-<LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profil"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/blue"/>
+    </com.google.android.material.appbar.MaterialToolbar>
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_below="@id/toolbar">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:padding="20dp"
-        android:background="@color/blue">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_baseline_menu_24"/>
+        android:layout_height="200dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_centerInParent="true"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/green"
+                app:cardCornerRadius="50dp">
         <ImageView
             android:id="@+id/profil"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_baseline"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/ic_person"
+            android:layout_centerInParent="true"/>
+            </androidx.cardview.widget.CardView>
         <TextView
-            android:id="@+id/name"
+            android:text="Edit Profil"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Name"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/profil"
-            android:layout_centerVertical="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ID Member"
-            android:textSize="15sp"
-            android:textColor="@color/white"
-            android:layout_below="@+id/name"
-            android:layout_toRightOf="@+id/profil"
-            android:layout_centerVertical="true"/>
+            android:drawableLeft="@drawable/ic_edit"
+            android:layout_marginTop="120dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"/>
+        </RelativeLayout>
 
-    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:layout_marginTop="-80dp">
+        android:layout_marginTop="-30dp">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="125dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/blues"
+            app:cardBackgroundColor="@color/green"
             app:cardElevation="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_work"
+                    android:src="@drawable/ic_assignment"
                     android:layout_centerHorizontal="true"/>
                 <TextView
                     android:id="@+id/job"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Your Work"
+                    android:text="Tugas"
                     android:textColor="@color/white"
                     android:includeFontPadding="false"
                     android:layout_centerInParent="true"/>
@@ -83,7 +95,7 @@
                     android:id="@+id/progres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Progress 85%"
+                    android:text="Selesai 85%"
                     android:layout_below="@+id/job"
                     android:textColor="@color/white"
                     android:includeFontPadding="false"
@@ -95,13 +107,13 @@
             android:layout_height="125dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/blues"
+            app:cardBackgroundColor="@color/green"
             app:cardElevation="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -112,7 +124,7 @@
                     android:id="@+id/grup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All group"
+                    android:text="Semua Anggota"
                     android:textColor="@color/white"
                     android:includeFontPadding="false"
                     android:layout_centerInParent="true"/>
@@ -120,7 +132,7 @@
                     android:id="@+id/allGrup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member"
+                    android:text="40 Orang"
                     android:layout_below="@+id/grup"
                     android:textColor="@color/white"
                     android:includeFontPadding="false"
@@ -138,16 +150,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_person_outline_24"
+            android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="10dp"
-            android:text="My Name"
+            android:text="Nama"
             android:textSize="20sp"
             android:padding="20dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_date_range_24"
+            android:drawableLeft="@drawable/ic_date"
             android:drawablePadding="10dp"
             android:text="12-12-2020"
             android:inputType="date"
@@ -157,7 +169,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_gend_24"
+            android:drawableLeft="@drawable/ic_wc"
             android:drawablePadding="10dp"
             android:text="Gender"
             android:textSize="20sp"
@@ -165,21 +177,22 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:drawableLeft="@drawable/ic_location"
             android:drawablePadding="10dp"
-            android:text="Your address"
+            android:text="Alamat"
             android:textSize="20sp"
             android:padding="20dp"/>
         <Button
             android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="LOGOUT"
-            android:background="@drawable/button"
+            android:layout_gravity="center"
+            android:text="Keluar"
             android:textSize="15sp"
             android:textColor="@color/white"/>
 
     </LinearLayout>
 </LinearLayout>
-
 </ScrollView>
+
+    </RelativeLayout>

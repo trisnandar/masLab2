@@ -14,12 +14,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mslab.Adapter.TabAdapter;
-import com.example.mslab.FinishJobFragment;
-import com.example.mslab.NewJobFragment;
-import com.example.mslab.ProsesJobFragment;
+import com.example.mslab.Page.JobFragment.FinishJobFragment;
+import com.example.mslab.Page.JobFragment.NewJobFragment;
+import com.example.mslab.Page.JobFragment.ProsesJobFragment;
 import com.example.mslab.R;
 import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -49,48 +48,58 @@ public class workPage extends Fragment {
         finishJobFragment = new FinishJobFragment();
 
         tabLayout.setupWithViewPager(viewPager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), 0);
-        viewPagerAdapter.addFragment(newJobFragment, "Baru");
-        viewPagerAdapter.addFragment(prosesJobFragment, "Proses");
-        viewPagerAdapter.addFragment(finishJobFragment, "Selesai");
-        viewPager.setAdapter(viewPagerAdapter);
 
-        BadgeDrawable badgeDrawable = tabLayout.getTabAt(0).getOrCreateBadge();
-        badgeDrawable.setVisible(true);
-        badgeDrawable.setNumber(4);
+        TabAdapter tabAdapter = new TabAdapter(getFragmentManager(), 0);
+        tabAdapter.addFragment(newJobFragment, "Baru");
+        tabAdapter.addFragment(prosesJobFragment, "Proses");
+        tabAdapter.addFragment(finishJobFragment, "Selesai");
+        viewPager.setAdapter(tabAdapter);
+
+//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), 0);
+//        viewPagerAdapter.addFragment(newJobFragment, "Baru");
+//        viewPagerAdapter.addFragment(prosesJobFragment, "Proses");
+//        viewPagerAdapter.addFragment(finishJobFragment, "Selesai");
+
+        BadgeDrawable newJobDrawable = tabLayout.getTabAt(0).getOrCreateBadge();
+        newJobDrawable.setVisible(true);
+        newJobDrawable.setNumber(4);
+
+        BadgeDrawable prosesJobDrawable = tabLayout.getTabAt(1).getOrCreateBadge();
+        prosesJobDrawable.setVisible(true);
+        prosesJobDrawable.setNumber(2);
 
 
-        return inflater.inflate(R.layout.work_fragment, container, false);
+        return view;
     }
 
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
-
-        private List<Fragment> fragments = new ArrayList<>();
-        private List<String> fragmentTitle = new ArrayList<>();
-
-        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
-            super(fm, behavior);
-        }
-
-        public void addFragment(Fragment fragment, String title){
-            fragments.add(fragment);
-            fragmentTitle.add(title);
-        }
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return fragments.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragments.size();
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return fragmentTitle.get(position);
-        }
-    }
+//    private class ViewPagerAdapter extends FragmentPagerAdapter {
+//
+//        private List<Fragment> fragments = new ArrayList<>();
+//        private List<String> fragmentTitle = new ArrayList<>();
+//
+//        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+//            super(fm, behavior);
+//        }
+//
+//        public void addFragment(Fragment fragment, String title){
+//            fragments.add(fragment);
+//            fragmentTitle.add(title);
+//        }
+//        @NonNull
+//        @Override
+//        public Fragment getItem(int position) {
+//            return fragments.get(position);
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return fragments.size();
+//        }
+//
+//        @Nullable
+//        @Override
+//        public CharSequence getPageTitle(int position) {
+//            return fragmentTitle.get(position);
+//        }
+//    }
 }
