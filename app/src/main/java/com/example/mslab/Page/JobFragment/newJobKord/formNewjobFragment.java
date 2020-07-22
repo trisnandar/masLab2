@@ -1,4 +1,4 @@
-package com.example.mslab;
+package com.example.mslab.Page.JobFragment.newJobKord;
 
 import android.os.Bundle;
 
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import com.example.mslab.R;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
