@@ -26,7 +26,7 @@ public class FinishJobFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter rAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    ArrayList<finishJob> dataFinish = new ArrayList<>();
+    ArrayList<finishJob> data = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,10 +77,11 @@ public class FinishJobFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        rAdapter = new finishJobAdapter(dataFinish,getContext());
+        rAdapter = new finishJobAdapter(data,getContext());
         recyclerView.setAdapter(rAdapter);
 
-        dataFinish.add(new finishJob("Adm","Pengisian berita acara agar dipercepat","Selesai"));
+        data.clear();
+        data.add(new finishJob("Adm","Pengisian berita acara agar dipercepat","Selesai"));
         rAdapter.notifyDataSetChanged();
         return view;
         // Inflate the layout for this fragment

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".formNewjobFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:hint="Nama Asisten"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/blue"
+            app:boxStrokeWidthFocused="2dp"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/black"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Tugas"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/blue"
+            app:boxStrokeWidthFocused="2dp"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Deskripsi Tugas"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/blue"
+            app:boxStrokeWidthFocused="2dp"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:inputType="textLongMessage"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Deadline"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/blue"
+            app:boxStrokeWidthFocused="2dp"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:inputType="date"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+        </RelativeLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:text="Kirim"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"/>
+    </LinearLayout>
+</RelativeLayout>
+
+</FrameLayout>

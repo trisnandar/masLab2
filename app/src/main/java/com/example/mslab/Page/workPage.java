@@ -68,7 +68,6 @@ public class workPage extends Fragment {
         prosesJobDrawable.setVisible(true);
         prosesJobDrawable.setNumber(2);
 
-
         return view;
     }
 

@@ -5,9 +5,28 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylceView"
+    <View
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="150dp"
+        android:background="@mipmap/coolhue"/>
+    <RelativeLayout
+        android:id="@+id/info"
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recylceView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylceView2"
+        android:layout_below="@id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"/>
 
 </RelativeLayout>

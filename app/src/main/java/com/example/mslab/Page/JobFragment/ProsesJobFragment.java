@@ -80,9 +80,10 @@ public class ProsesJobFragment extends Fragment {
         rAdapter = new prosesJobAdapter(data,getContext());
         recyclerView.setAdapter(rAdapter);
 
+        data.clear();
         data.add(new prosesJob("Pelabelan","Kepada setiap koordinator lab agar segera merampungkan " +
                 "pendataan barang lab","Proses"));
-        data.add(new prosesJob("Adm","Pengisian berita acara agar dipercepat","Selesai"));
+        data.add(new prosesJob("Adm","Pengisian berita acara agar dipercepat","Proses"));
         rAdapter.notifyDataSetChanged();
         return view;
         // Inflate the layout for this fragment
